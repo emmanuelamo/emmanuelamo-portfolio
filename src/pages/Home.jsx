@@ -221,7 +221,7 @@ export default function Home() {
                 width: '100px',
                 height: '100px',
                 borderRadius: '50%',
-                background: 'url("https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face") center/cover',
+                background: 'url("https://i.imgur.com/your-photo.jpg") center/cover',
                 border: '4px solid white',
                 boxShadow: '0 10px 20px rgba(0, 0, 0, 0.1)'
               }}></div>

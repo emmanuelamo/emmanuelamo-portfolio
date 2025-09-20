@@ -1,4 +1,187 @@
 export default function Blog() {
+  const containerStyle = {
+    maxWidth: '1200px',
+    margin: '0 auto',
+    padding: '0 1.5rem',
+    perspective: '1000px'
+  };
+
+  const pageTitleStyle = {
+    fontSize: '3rem',
+    fontWeight: 'bold',
+    textAlign: 'center',
+    marginBottom: '1rem',
+    color: '#1f2937',
+    textShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+    animation: 'slideInUp 0.8s ease-out'
+  };
+
+  const pageSubtitleStyle = {
+    fontSize: '1.25rem',
+    color: '#6b7280',
+    textAlign: 'center',
+    marginBottom: '3rem',
+    animation: 'slideInUp 0.8s ease-out 0.2s both'
+  };
+
+  const categoriesStyle = {
+    display: 'flex',
+    flexWrap: 'wrap',
+    gap: '1rem',
+    justifyContent: 'center',
+    marginBottom: '4rem'
+  };
+
+  const categoryButtonStyle = {
+    padding: '0.75rem 1.5rem',
+    borderRadius: '9999px',
+    fontSize: '0.875rem',
+    fontWeight: '500',
+    border: 'none',
+    cursor: 'pointer',
+    transition: 'all 0.2s ease',
+    backgroundColor: '#f3f4f6',
+    color: '#6b7280'
+  };
+
+  const activeCategoryStyle = {
+    ...categoryButtonStyle,
+    backgroundColor: '#2563eb',
+    color: 'white'
+  };
+
+  const blogPostsStyle = {
+    display: 'flex',
+    flexDirection: 'column',
+    gap: '2rem',
+    marginBottom: '4rem'
+  };
+
+  const blogPostStyle = {
+    backgroundColor: 'white',
+    borderRadius: '1rem',
+    boxShadow: '0 10px 25px rgba(0, 0, 0, 0.1)',
+    padding: '2rem',
+    transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+    transform: 'translateZ(0)',
+    cursor: 'pointer',
+    border: '1px solid #f3f4f6',
+    position: 'relative',
+    overflow: 'hidden'
+  };
+
+  const postHeaderStyle = {
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'flex-start',
+    marginBottom: '1rem',
+    flexWrap: 'wrap',
+    gap: '1rem'
+  };
+
+  const categoryBadgeStyle = {
+    padding: '0.5rem 1rem',
+    backgroundColor: '#dbeafe',
+    color: '#1e40af',
+    fontSize: '0.875rem',
+    borderRadius: '9999px',
+    fontWeight: '500'
+  };
+
+  const postMetaStyle = {
+    fontSize: '0.875rem',
+    color: '#9ca3af',
+    display: 'flex',
+    alignItems: 'center',
+    gap: '0.5rem'
+  };
+
+  const postTitleStyle = {
+    fontSize: '1.75rem',
+    fontWeight: '600',
+    color: '#1f2937',
+    marginBottom: '1rem',
+    lineHeight: '1.3'
+  };
+
+  const postExcerptStyle = {
+    color: '#6b7280',
+    lineHeight: '1.6',
+    marginBottom: '1.5rem',
+    fontSize: '1rem'
+  };
+
+  const readMoreStyle = {
+    color: '#2563eb',
+    fontWeight: '500',
+    textDecoration: 'none',
+    fontSize: '1rem',
+    display: 'inline-flex',
+    alignItems: 'center',
+    gap: '0.5rem',
+    transition: 'color 0.2s ease'
+  };
+
+  const newsletterSectionStyle = {
+    background: 'linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%)',
+    padding: '3rem',
+    borderRadius: '1rem',
+    textAlign: 'center',
+    boxShadow: '0 20px 40px rgba(0, 0, 0, 0.1)',
+    transform: 'translateZ(0)',
+    transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+    position: 'relative',
+    overflow: 'hidden'
+  };
+
+  const newsletterTitleStyle = {
+    fontSize: '2rem',
+    fontWeight: 'bold',
+    marginBottom: '1rem',
+    color: '#1f2937'
+  };
+
+  const newsletterDescriptionStyle = {
+    fontSize: '1.125rem',
+    color: '#6b7280',
+    marginBottom: '2rem',
+    maxWidth: '600px',
+    margin: '0 auto 2rem auto',
+    lineHeight: '1.6'
+  };
+
+  const newsletterFormStyle = {
+    display: 'flex',
+    maxWidth: '400px',
+    margin: '0 auto',
+    gap: '0.5rem',
+    flexWrap: 'wrap',
+    justifyContent: 'center'
+  };
+
+  const emailInputStyle = {
+    flex: '1',
+    minWidth: '250px',
+    padding: '0.75rem 1rem',
+    border: '2px solid #e5e7eb',
+    borderRadius: '0.5rem',
+    fontSize: '1rem',
+    outline: 'none',
+    transition: 'border-color 0.2s ease'
+  };
+
+  const subscribeButtonStyle = {
+    padding: '0.75rem 1.5rem',
+    backgroundColor: '#2563eb',
+    color: 'white',
+    border: 'none',
+    borderRadius: '0.5rem',
+    fontSize: '1rem',
+    fontWeight: '500',
+    cursor: 'pointer',
+    transition: 'background-color 0.2s ease'
+  };
+
   const blogPosts = [
     {
       title: "Building Scalable SMS Gateways with Kannel and Rocky Linux",
@@ -47,22 +230,19 @@ export default function Blog() {
   const categories = ["All", "Infrastructure", "Telecom", "Development", "DevOps", "Mobile", "Architecture"];
 
   return (
-    <div className="max-w-4xl mx-auto">
-      <h1 className="text-4xl font-bold mb-8 text-gray-800">Blog</h1>
-      <p className="text-lg text-gray-600 mb-8">
+    <div style={containerStyle}>
+      <h1 style={pageTitleStyle}>Blog</h1>
+      <p style={pageSubtitleStyle}>
         Technical insights, tutorials, and experiences from my work in VAS solutions and backend development.
       </p>
 
       {/* Category Filter */}
-      <div className="flex flex-wrap gap-3 mb-12">
+      <div style={categoriesStyle}>
         {categories.map((category, index) => (
           <button
             key={index}
-            className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
-              category === "All"
-                ? "bg-blue-600 text-white"
-                : "bg-gray-100 text-gray-700 hover:bg-gray-200"
-            }`}
+            style={category === "All" ? activeCategoryStyle : categoryButtonStyle}
+            className="btn-3d"
           >
             {category}
           </button>
@@ -70,50 +250,55 @@ export default function Blog() {
       </div>
 
       {/* Blog Posts */}
-      <div className="space-y-8">
+      <div style={blogPostsStyle}>
         {blogPosts.map((post, index) => (
-          <article key={index} className="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 p-8">
-            <div className="flex justify-between items-start mb-4">
-              <span className="px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-full font-medium">
+          <article key={index} className="project-card-3d" style={{
+            ...blogPostStyle,
+            animation: `slideInUp 0.6s ease-out ${0.1 * (index + 1)}s both`
+          }}>
+            <div style={postHeaderStyle}>
+              <span style={categoryBadgeStyle}>
                 {post.category}
               </span>
-              <div className="text-sm text-gray-500">
-                {post.date} • {post.readTime}
+              <div style={postMetaStyle}>
+                <span>{post.date}</span>
+                <span>•</span>
+                <span>{post.readTime}</span>
               </div>
             </div>
             
-            <h2 className="text-2xl font-semibold text-gray-800 mb-4 hover:text-blue-600 transition-colors cursor-pointer">
+            <h2 style={postTitleStyle}>
               {post.title}
             </h2>
             
-            <p className="text-gray-600 leading-relaxed mb-6">
+            <p style={postExcerptStyle}>
               {post.excerpt}
             </p>
             
-            <button className="text-blue-600 font-medium hover:text-blue-800 transition-colors">
+            <a href="/contact" style={readMoreStyle}>
               Read More →
-            </button>
+            </a>
           </article>
         ))}
       </div>
 
       {/* Newsletter Signup */}
-      <div className="mt-16 bg-gradient-to-r from-blue-50 to-indigo-50 p-8 rounded-lg text-center">
-        <h2 className="text-2xl font-semibold mb-4 text-gray-800">Stay Updated</h2>
-        <p className="text-gray-600 mb-6">
+      <section style={newsletterSectionStyle} className="hero-3d">
+        <h2 style={newsletterTitleStyle}>Stay Updated</h2>
+        <p style={newsletterDescriptionStyle}>
           Get notified when I publish new technical articles and insights.
         </p>
-        <div className="flex max-w-md mx-auto">
+        <div style={newsletterFormStyle}>
           <input
             type="email"
             placeholder="Enter your email"
-            className="flex-1 px-4 py-3 border border-gray-300 rounded-l-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+            style={emailInputStyle}
           />
-          <button className="px-6 py-3 bg-blue-600 text-white rounded-r-lg hover:bg-blue-700 transition-colors">
+          <button style={subscribeButtonStyle} className="btn-3d">
             Subscribe
           </button>
         </div>
-      </div>
+      </section>
     </div>
   );
 }
