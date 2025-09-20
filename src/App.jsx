@@ -129,7 +129,7 @@ function App() {
                   Emmanuel Amo
                 </h3>
                 <p style={{ color: '#d1d5db', lineHeight: '1.6' }}>
-                  Application Software Engineer specializing in VAS solutions, 
+                  Application Support/Software Engineer specializing in VAS solutions, 
                   backend development, and system integration.
                 </p>
               </div>

@@ -74,3 +74,142 @@
     color: transparent;
   }
 }
+
+/* 3D Animations and Effects */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px) translateZ(20px);
+  }
+  50% {
+    transform: translateY(-10px) translateZ(20px);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1) translateZ(0);
+  }
+  50% {
+    transform: scale(1.05) translateZ(10px);
+  }
+}
+
+@keyframes rotate3d {
+  0% {
+    transform: rotateY(0deg) translateZ(0);
+  }
+  100% {
+    transform: rotateY(360deg) translateZ(0);
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px) translateZ(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) translateZ(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px) translateZ(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) translateZ(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px) translateZ(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) translateZ(0);
+  }
+}
+
+/* 3D Hover Effects */
+.skill-card-3d {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.skill-card-3d:hover {
+  transform: translateY(-10px) rotateX(5deg) rotateY(5deg) translateZ(20px);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+}
+
+.project-card-3d {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.project-card-3d:hover {
+  transform: translateY(-8px) rotateX(3deg) rotateY(3deg) translateZ(15px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+}
+
+.hero-3d {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hero-3d:hover {
+  transform: translateZ(10px) rotateX(2deg);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
+}
+
+/* Button 3D Effects */
+.btn-3d {
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateZ(0);
+}
+
+.btn-3d:hover {
+  transform: translateY(-2px) translateZ(5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.btn-3d:active {
+  transform: translateY(0) translateZ(0);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Icon 3D Effects */
+.icon-3d {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.icon-3d:hover {
+  transform: rotateY(180deg) translateZ(10px);
+}
+
+/* Staggered Animation */
+.animate-stagger-1 {
+  animation: slideInUp 0.6s ease-out 0.1s both;
+}
+
+.animate-stagger-2 {
+  animation: slideInUp 0.6s ease-out 0.2s both;
+}
+
+.animate-stagger-3 {
+  animation: slideInUp 0.6s ease-out 0.3s both;
+}
+
+.animate-stagger-4 {
+  animation: slideInUp 0.6s ease-out 0.4s both;
+}
+
+.animate-stagger-5 {
+  animation: slideInUp 0.6s ease-out 0.5s both;
+}
+
+.animate-stagger-6 {
+  animation: slideInUp 0.6s ease-out 0.6s both;
+}

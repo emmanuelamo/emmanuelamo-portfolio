@@ -7,7 +7,7 @@ export default function About() {
         <div className="bg-gradient-to-r from-blue-50 to-indigo-50 p-8 rounded-lg mb-8">
           <h2 className="text-2xl font-semibold mb-4 text-gray-800">Professional Summary</h2>
           <p className="text-gray-700 leading-relaxed">
-            Experienced Application Software Engineer with a strong background in VAS (Value-Added Services), 
+            Experienced Application Support/Software Engineer with a strong background in VAS (Value-Added Services), 
             backend development, system integration, and server management. At Nalo Solutions, I design and 
             implement scalable content delivery platforms that power services across SMS, USSD, and longcode 
             channels, ensuring performance, reliability, and user engagement.

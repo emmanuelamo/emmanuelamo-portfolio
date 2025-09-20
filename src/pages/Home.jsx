@@ -2,7 +2,8 @@ export default function Home() {
   const containerStyle = {
     maxWidth: '1200px',
     margin: '0 auto',
-    padding: '0 1.5rem'
+    padding: '0 1.5rem',
+    perspective: '1000px'
   };
 
   const heroSectionStyle = {
@@ -10,7 +11,12 @@ export default function Home() {
     padding: '4rem 0',
     background: 'linear-gradient(135deg, #dbeafe 0%, #e0e7ff 100%)',
     borderRadius: '0.5rem',
-    marginBottom: '4rem'
+    marginBottom: '4rem',
+    transform: 'translateZ(0)',
+    transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+    boxShadow: '0 20px 40px rgba(0, 0, 0, 0.1)',
+    position: 'relative',
+    overflow: 'hidden'
   };
 
   const heroTitleStyle = {
@@ -18,7 +24,10 @@ export default function Home() {
     fontWeight: 'bold',
     color: '#1f2937',
     marginBottom: '1.5rem',
-    lineHeight: '1.1'
+    lineHeight: '1.1',
+    transform: 'translateZ(20px)',
+    textShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+    animation: 'float 3s ease-in-out infinite'
   };
 
   const heroSubtitleStyle = {
@@ -80,7 +89,9 @@ export default function Home() {
     borderRadius: '0.5rem',
     boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1)',
     textAlign: 'center',
-    transition: 'transform 0.2s, box-shadow 0.2s'
+    transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+    transform: 'translateZ(0)',
+    cursor: 'pointer'
   };
 
   const iconContainerStyle = {
@@ -118,7 +129,9 @@ export default function Home() {
     borderRadius: '0.5rem',
     boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1)',
     padding: '2rem',
-    transition: 'transform 0.2s, box-shadow 0.2s'
+    transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+    transform: 'translateZ(0)',
+    cursor: 'pointer'
   };
 
   const projectTitleStyle = {
@@ -182,20 +195,52 @@ export default function Home() {
   return (
     <div style={containerStyle}>
       {/* Hero Section */}
-      <section style={heroSectionStyle}>
+      <section style={heroSectionStyle} className="hero-3d">
         <div>
-          <h1 style={heroTitleStyle}>
-            Hi, I'm <span style={{ color: '#2563eb' }}>Emmanuel Amo</span> 👋
-          </h1>
+          <div style={{ 
+            display: 'flex', 
+            alignItems: 'center', 
+            justifyContent: 'center', 
+            gap: '2rem',
+            marginBottom: '2rem',
+            flexWrap: 'wrap'
+          }}>
+            <div style={{
+              width: '120px',
+              height: '120px',
+              borderRadius: '50%',
+              background: 'linear-gradient(135deg, #2563eb, #1d4ed8)',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              boxShadow: '0 20px 40px rgba(37, 99, 235, 0.3)',
+              animation: 'pulse 2s ease-in-out infinite',
+              transform: 'translateZ(20px)'
+            }}>
+              <div style={{
+                width: '100px',
+                height: '100px',
+                borderRadius: '50%',
+                background: 'url("https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face") center/cover',
+                border: '4px solid white',
+                boxShadow: '0 10px 20px rgba(0, 0, 0, 0.1)'
+              }}></div>
+            </div>
+            <div>
+              <h1 style={heroTitleStyle}>
+                Hi, I'm <span style={{ color: '#2563eb' }}>Emmanuel Amo</span> 👋
+              </h1>
+            </div>
+          </div>
           <p style={heroSubtitleStyle}>
-            Application Software Engineer specializing in VAS solutions, backend development, 
+            Application Support/Software Engineer specializing in VAS solutions, backend development, 
             and system integration. Building scalable platforms that power telecom services.
           </p>
           <div style={buttonContainerStyle}>
-            <a href="/projects" style={primaryButtonStyle}>
+            <a href="/projects" style={primaryButtonStyle} className="btn-3d">
               View My Work
             </a>
-            <a href="/contact" style={secondaryButtonStyle}>
+            <a href="/contact" style={secondaryButtonStyle} className="btn-3d">
               Get In Touch
             </a>
           </div>
@@ -206,8 +251,8 @@ export default function Home() {
       <section>
         <h2 style={sectionTitleStyle}>Technical Expertise</h2>
         <div style={skillsGridStyle}>
-          <div style={skillCardStyle}>
-            <div style={iconContainerStyle}>
+          <div style={skillCardStyle} className="skill-card-3d animate-stagger-1">
+            <div style={iconContainerStyle} className="icon-3d">
               <svg width="32" height="32" fill="none" stroke="#2563eb" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
               </svg>
@@ -216,8 +261,8 @@ export default function Home() {
             <p style={skillDescriptionStyle}>Node.js, PHP, APIs, Database Design, System Architecture</p>
           </div>
           
-          <div style={skillCardStyle}>
-            <div style={{...iconContainerStyle, backgroundColor: '#dcfce7'}}>
+          <div style={skillCardStyle} className="skill-card-3d animate-stagger-2">
+            <div style={{...iconContainerStyle, backgroundColor: '#dcfce7'}} className="icon-3d">
               <svg width="32" height="32" fill="none" stroke="#16a34a" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
               </svg>
@@ -226,8 +271,8 @@ export default function Home() {
             <p style={skillDescriptionStyle}>SMS, USSD, Longcode, Kannel, Telecom Integration</p>
           </div>
           
-          <div style={skillCardStyle}>
-            <div style={{...iconContainerStyle, backgroundColor: '#f3e8ff'}}>
+          <div style={skillCardStyle} className="skill-card-3d animate-stagger-3">
+            <div style={{...iconContainerStyle, backgroundColor: '#f3e8ff'}} className="icon-3d">
               <svg width="32" height="32" fill="none" stroke="#9333ea" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
@@ -242,7 +287,7 @@ export default function Home() {
       <section>
         <h2 style={sectionTitleStyle}>Recent Work</h2>
         <div style={projectsGridStyle}>
-          <div style={projectCardStyle}>
+          <div style={projectCardStyle} className="project-card-3d animate-stagger-4">
             <h3 style={projectTitleStyle}>SMS Gateway Platform</h3>
             <p style={projectDescriptionStyle}>
               Built a scalable SMS delivery platform using Kannel with 64 modem integration on Rocky Linux. 
@@ -259,7 +304,7 @@ export default function Home() {
             </a>
           </div>
           
-          <div style={projectCardStyle}>
+          <div style={projectCardStyle} className="project-card-3d animate-stagger-5">
             <h3 style={projectTitleStyle}>VAS Content Delivery</h3>
             <p style={projectDescriptionStyle}>
               Developed comprehensive content delivery platform for SMS, USSD, and longcode channels 
@@ -279,7 +324,7 @@ export default function Home() {
       </section>
 
       {/* Call to Action */}
-      <section style={ctaSectionStyle}>
+      <section style={ctaSectionStyle} className="animate-stagger-6">
         <h2 style={ctaTitleStyle}>Ready to Work Together?</h2>
         <p style={ctaDescriptionStyle}>
           I'm always interested in new opportunities and exciting projects. 
@@ -291,6 +336,7 @@ export default function Home() {
             ...primaryButtonStyle,
             display: 'inline-block'
           }}
+          className="btn-3d"
         >
           Start a Conversation
         </a>
