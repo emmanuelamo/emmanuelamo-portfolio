@@ -327,7 +327,9 @@ export default function Contact() {
             <h3 style={socialTitleStyle}>Connect With Me</h3>
             <div style={socialLinksStyle}>
               <a
-                href="#"
+                href="https://linkedin.com/in/emmanuel-amo"
+                target="_blank"
+                rel="noopener noreferrer"
                 style={linkedinStyle}
                 className="btn-3d"
                 aria-label="LinkedIn"
@@ -338,7 +340,9 @@ export default function Contact() {
               </a>
               
               <a
-                href="#"
+                href="https://github.com/emmanuel-amo"
+                target="_blank"
+                rel="noopener noreferrer"
                 style={githubStyle}
                 className="btn-3d"
                 aria-label="GitHub"
