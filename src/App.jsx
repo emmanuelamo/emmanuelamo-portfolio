@@ -152,7 +152,7 @@ function App() {
                 </h4>
                     <div style={{ display: 'flex', gap: '1rem' }}>
                       <a 
-                        href="https://linkedin.com/in/emmanuel-amo" 
+                        href="https://linkedin.com/in/emmanuelamo" 
                         target="_blank" 
                         rel="noopener noreferrer"
                         style={{ color: '#d1d5db', transition: 'color 0.2s ease' }}
@@ -164,7 +164,7 @@ function App() {
                         </svg>
                       </a>
                       <a 
-                        href="https://github.com/emmanuel-amo" 
+                        href="https://github.com/emmanuelamo" 
                         target="_blank" 
                         rel="noopener noreferrer"
                         style={{ color: '#d1d5db', transition: 'color 0.2s ease' }}

@@ -127,7 +127,7 @@ I'm an experienced **Application Support/Software Engineer** with a strong backg
 ## 📞 Let's Connect!
 
 <div align="center">
-  <a href="https://linkedin.com/in/emmanuelamo" target="_blank">
+  <a href="https://linkedin.com/in/emmanuel-amo" target="_blank">
     <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
   </a>
   <a href="https://emmanuelamo.netlify.app" target="_blank">
