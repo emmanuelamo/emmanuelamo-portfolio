@@ -164,7 +164,7 @@ function App() {
                         </svg>
                       </a>
                       <a 
-                        href="https://github.com/emmanuel-amo" 
+                        href="https://github.com/emmanuelamo" 
                         target="_blank" 
                         rel="noopener noreferrer"
                         style={{ color: '#d1d5db', transition: 'color 0.2s ease' }}
